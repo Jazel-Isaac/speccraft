@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.115.4">
+    <title>Carousel Template · Bootstrap v5.3</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+   body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+   }
+  /* Customize carousel images */
+  .carousel-item img {
+      object-fit: cover; /* Make images cover the container */
+      width: 100%;
+      height: 100%;
+      filter: blur(5px); /* Apply a blur effect to images */
+  }
+
+  /* Adjust carousel transition speed */
+  #myCarousel {
+      transition-duration: 5s; /* Set auto-scroll speed to 5 seconds */
+  }
+</style>
+
+<header data-bs-theme="dark">
+  
+
+
+</header>
+
+<main>
+  <!--CAROUSEL CODE-->
+
+  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" data-bs-wrap="true">
+    <!--carousel Indicators-->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+  </div>
+  
+
+    
+      <div class="carousel-inner">
+        <!--First slide-->
+              <div class="carousel-item active">
+                  <img src="../assets/imgs/artist covers for website(1080)/a1.png" class="d-block w-100" alt="Slide 1">
+                  <div class="container">
+                      <div class="carousel-caption text-start">
+                          <h1>Example headline.</h1>
+                          <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+                          <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                      </div>
+                  </div>
+              </div>
+               <!--Second slide-->
+               <div class="carousel-item">
+                <img src="../assets/imgs/artist covers for website(1080)/a2.png" class="d-block w-100" alt="Slide 1">
+                <div class="container">
+                    <div class="carousel-caption text-start">
+                        <h1>Example headline.</h1>
+                        <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                    </div>
+                </div>
+            </div>
+             <!--Third slide-->
+             <div class="carousel-item">
+              <img src="../assets/imgs/artist covers for website(1080)/a3.png" class="d-block w-100" alt="Slide 1">
+              <div class="container">
+                  <div class="carousel-caption text-start">
+                      <h1>Example headline.</h1>
+                      <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+                      <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                  </div>
+              </div>
+          </div>
+            <!--Fourth slide-->
+      <div class="carousel-item">
+        <img src="../assets/imgs/artist covers for website(1080)/a4.png" class="d-block w-100" alt="Slide 1">
+          <div class="container">
+            <div class="carousel-caption text-start">
+                <h1>Example headline.</h1>
+                <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+            </div>                                          
+        </div>
+      </div>
+      <!--Fifth slide-->
+      <div class="carousel-item">
+        <img src="../assets/imgs/artist covers for website(1080)/a5.png" class="d-block w-100" alt="Slide 1">
+          <div class="container">
+              <div class="carousel-caption text-start">
+                  <h1>Example headline.</h1>
+                  <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+                  <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+              </div>
+          </div>
+      </div>
+     <!--Sixth slide-->
+     <div class="carousel-item">
+        <img src="../assets/imgs/artist covers for website(1080)/a5.png" class="d-block w-100" alt="Slide 1">
+          <div class="container">
+              <div class="carousel-caption text-start">
+                  <h1>Example headline.</h1>
+                  <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+                  <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+              </div>
+          </div>
+      </div>
+   
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</main>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const carousel = document.querySelector('#myCarousel');
+const carouselItems = Array.from(carousel.querySelectorAll('.carousel-item'));
+const prevButton = document.querySelector('.carousel-control-prev');
+const nextButton = document.querySelector('.carousel-control-next');
+
+let currentIndex = 0;
+let intervalId = setInterval(autoScroll, 5000); // 5 seconds interval
+
+function autoScroll() {
+    const nextIndex = (currentIndex + 1) % carouselItems.length;
+    carouselItems[currentIndex].classList.remove('active');
+    carouselItems[nextIndex].classList.add('active');
+    currentIndex = nextIndex;
+}
+
+function stopAutoScroll() {
+    clearInterval(intervalId);
+}
+
+function resumeAutoScroll() {
+    intervalId = setInterval(autoScroll, 5000);
+}
+
+prevButton.addEventListener('click', () => {
+    stopAutoScroll();
+    const prevIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+    carouselItems[currentIndex].classList.remove('active');
+    carouselItems[prevIndex].classList.add('active');
+    currentIndex = prevIndex;
+    resumeAutoScroll();
+});
+
+nextButton.addEventListener('click', () => {
+    stopAutoScroll();
+    autoScroll();
+    resumeAutoScroll();
+});
+</script>
+
+    </body>
+</html>
