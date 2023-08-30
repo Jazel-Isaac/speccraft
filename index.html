@@ -1,75 +1,230 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="./assets/js/color-modes.js"></script>
-
+<head>
+    <script src="./assets/js/color-modes.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.115.4">
-    <title>Carousel Template · Bootstrap v5.3</title>
-
+    <title>Spec Craft Limited</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
-
-    
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff00;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+}
+/* Add this CSS to your existing stylesheet */
+.navbar.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #ffffff; /* You can adjust the background color as needed */
+    opacity: 10%;
+}
 
-<link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<style>
-   body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
+
+         /* Transparent Navbar */
+         .navbar {
+            background-color: transparent;
+            border: none;
+        }
+
+        .navbar .navbar-brand {
+            color: rgb(0, 0, 0);
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+        }
+
+        /* Transparent Footer */
+        .footer {
+            background-color: none;
+            color: rgb(15, 14, 14);
+            padding: 10px;
+        }
+
+        /* Carousel Slide */
+        .carousel-item {
+            height: 100vh; /* Set the slide height to fill the viewport */
+            position: relative;
+        }
+        .carousel-caption 
+        {
+    position: absolute;
+    right: 70%;
+    bottom: 6.25rem;
+    left: 15%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+}
+
+        /* Menu Items */
+        .menu-items {
+            position: absolute;
+            top: 50%; /* Position at the vertical center of the slide */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%);
+            z-index: 2; /* Make sure the menu items are on top */
+        }
+
+        .menu-item {
+            margin: 10px;
+            color: rgb(0, 0, 0);
+            font-size: 18px;
+            cursor: pointer;
+        }
+        /* Carousel Slide */
+        .carousel-item {
+            height: 100vh; /* Set the slide height to fill the viewport */
+            position: relative;
+        }
+
+        .carousel-inner {
+            overflow: auto;
+        }
+
+        /* Text and Button Area */
+        .text-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px; /* Adjust padding as needed */
+            border-radius: 5px;
+            animation: moveUp 10% ease-in-out infinite; /* Your animation */
+            position: absolute;
+            bottom: 50%; /* Position at the bottom of the slide */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%);
+            width: 80%; /* Adjust width as needed */
+        }
+
+       
+ @keyframes moveUp {
+     0% {
+         transform: translateY(0);
+     }
+     50% {
+         transform: translateY(-50px); /* Adjust the amount of movement */
+     }
+     100% {
+         transform: translateY(0);
+     }
+ }
+ 
+ .carousel-inner {
+     overflow: hidden;
+ }
+ 
+ .carousel-item {
+     transform: translateX(100%);
+     transition: transform 0.5s ease-in-out;
+ }
+ 
+ .carousel-item.active {
+     transform: translateX(0);
+ }
+ 
+ 
+   /* Customize carousel images */
+   .carousel-item img {
+       object-fit: cover; /* Make images cover the container */
+       width: 100%;
+       height: 100%;
+       filter: none; /* Apply a blur effect to images */
    }
-   /* Customize carousel behaviour (animations)*/
-   .carousel-item.active img {
-    animation: zoomBlur 10s ease-in-out infinite;
-}
+   .carousel-caption img {
 
-@keyframes zoomBlur {
-    0% {
-        transform: scale(1);
-        filter: blur(0px);
-    }
-    50% {
-        transform: scale(1.1);
-        filter: blur(3px);
-    }
-    100% {
-        transform: scale(1);
-        filter: blur(0px);
-    }
-}
-.carousel-inner {
-    overflow: hidden;
-}
+    width: 100%;
+       height: 100%;
+       filter: none;
+   }
+   .artist-name{
+    color: #000000;
+    opacity: 80%;
+   }
+ 
+   /* Adjust carousel transition speed */
+   #myCarousel {
+       transition-duration: 10s; /* Set auto-scroll speed to 5 seconds */
+   }
+   /* Add custom transition classes for each slide */
+   .transition-0 {
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
 
-.carousel-item {
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in-out;
-}
+        /* Custom transition effect for slide 1 */
+        .transition-1 {
+            transform: translateX(100%);
+            transition: transform 1s ease-in-out, transform 1s ease-in-out;
+        }
 
-.carousel-item.active {
-    transform: translateX(0);
-}
+        /* Custom transition effect for slide 2 */
+        .transition-2 {
+            opacity: 20;
+            transform: rotate(30deg);
+            transition: opacity 3s ease-in-out, transform 1s ease-in-out;
+        }
 
+        /* Custom transition effect for slide 3 */
+        .transition-3 {
+            opacity: 10;
+            transform: scale(0.5);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
 
-  /* Customize carousel images */
-  .carousel-item img {
-      object-fit: cover; /* Make images cover the container */
-      width: 100%;
-      height: 100%;
-      filter: blur(5px); /* Apply a blur effect to images */
-  }
+        /* Custom transition effect for slide 4 */
+        .transition-4 {
+            opacity: 80;
+            transform: skewX(-30deg);
+            transition: opacity 5s ease-in-out, transform 1s ease-in-out;
+        }
 
-  /* Adjust carousel transition speed */
-  #myCarousel {
-      transition-duration: 5s; /* Set auto-scroll speed to 5 seconds */
-  }
-</style>
-
+        /* Custom transition effect for slide 5 */
+        .transition-5 {
+            opacity: 40;
+            transform: translateY(-100%);
+            transition: opacity 2s ease-in-out, transform 1s ease-in-out;
+        }
+ </style>
+ 
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Spec Craft</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                   <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
 <header data-bs-theme="dark">
   
 
@@ -79,7 +234,7 @@
 <main>
   <!--CAROUSEL CODE-->
 
-  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel" data-bs-wrap="true">
+  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
     <!--carousel Indicators-->
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -92,75 +247,87 @@
   
 
     
-      <div class="carousel-inner">
-        <!--First slide-->
-              <div class="carousel-item active">
-                  <img src="./assets/imgs/artist covers for website(1080)/a1.png" class="d-block w-100" alt="Slide 1">
-                  <div class="container">
-                      <div class="carousel-caption text-start">
-                          <h1>Example headline.</h1>
-                          <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
-                          <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-                      </div>
-                  </div>
-              </div>
-               <!--Second slide-->
-               <div class="carousel-item">
-                <img src="./assets/imgs/artist covers for website(1080)/a2.png" class="d-block w-100" alt="Slide 1">
+        <div class="carousel-inner">
+
+
+               <!--First slide-->
+               <div class="carousel-item active">
+                <img src="./assets/imgs/artist covers for website(1080)/a1.png" class="d-block w-100" alt="Slide 1">
                 <div class="container">
                     <div class="carousel-caption text-start">
-                        <h1>Example headline.</h1>
-                        <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                        <img src="./assets/imgs/Untitled design/art thumbnail.png" class="d-block w-100" alt="art 1">
+                        <p class="opacity-100">Some representative placeholder content for the first slide of the carousel.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Get the Song</a></p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="artist-name">
+                        <h2>Richy Alfan</h2>
                     </div>
                 </div>
             </div>
-             <!--Third slide-->
-             <div class="carousel-item">
-              <img src="./assets/imgs/artist covers for website(1080)/a3.png" class="d-block w-100" alt="Slide 1">
-              <div class="container">
-                  <div class="carousel-caption text-start">
-                      <h1>Example headline.</h1>
-                      <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
-                      <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-                  </div>
-              </div>
-          </div>
-            <!--Fourth slide-->
-      <div class="carousel-item">
-        <img src="./assets/imgs/artist covers for website(1080)/a4.png" class="d-block w-100" alt="Slide 1">
-          <div class="container">
-            <div class="carousel-caption text-start">
-                <h1>Example headline.</h1>
-                <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-            </div>                                          
-        </div>
-      </div>
-      <!--Fifth slide-->
-      <div class="carousel-item">
-        <img src="./assets/imgs/artist covers for website(1080)/a5.png" class="d-block w-100" alt="Slide 1">
-          <div class="container">
-              <div class="carousel-caption text-start">
-                  <h1>Example headline.</h1>
-                  <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
-                  <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-              </div>
-          </div>
-      </div>
-     <!--Sixth slide-->
-     <div class="carousel-item">
-        <img src="./assets/imgs/artist covers for website(1080)/a5.png" class="d-block w-100" alt="Slide 1">
-          <div class="container">
-              <div class="carousel-caption text-start">
-                  <h1>Example headline.</h1>
-                  <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
-                  <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-              </div>
-          </div>
-      </div>
    
+ <!--Second slide-->
+ <div class="carousel-item">
+    <img src="./assets/imgs/artist covers for website(1080)/a2.png" class="d-block w-100" alt="Slide 2">
+    <div class="container">
+        <div class="carousel-caption text-start">
+            <img src="./assets/imgs/Untitled design/art thumbnail.png" class="d-block w-100" alt="art 2">
+            <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Get the Song</a></p>
+        </div>
     </div>
+</div>
+
+ <!--Third slide-->
+ <div class="carousel-item">
+    <img src="./assets/imgs/artist covers for website(1080)/a3.png" class="d-block w-100" alt="Slide 3">
+    <div class="container">
+        <div class="carousel-caption text-start">
+            <img src="./assets/imgs/Untitled design/art thumbnail.png" class="d-block w-100" alt="art 3">
+            <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Get the Song</a></p>
+        </div>
+    </div>
+</div>
+
+ <!--Fourth slide-->
+ <div class="carousel-item">
+    <img src="./assets/imgs/artist covers for website(1080)/a4.png" class="d-block w-100" alt="Slide 4">
+    <div class="container">
+        <div class="carousel-caption text-start">
+            <img src="./assets/imgs/Untitled design/art thumbnail.png" class="d-block w-100" alt="art 4">
+            <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Get the Song</a></p>
+        </div>
+    </div>
+</div>
+
+ <!--Fifth slide-->
+ <div class="carousel-item">
+    <img src="./assets/imgs/artist covers for website(1080)/a5.png" class="d-block w-100" alt="Slide 5">
+    <div class="container">
+        <div class="carousel-caption text-start">
+            <img src="./assets/imgs/Untitled design/art thumbnail.png" class="d-block w-100" alt="art 5">
+            <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Get the Song</a></p>
+        </div>
+    </div>
+</div>
+
+ <!--Sixth slide-->
+ <div class="carousel-item">
+    <img src="./assets/imgs/artist covers for website(1080)/last slide.png" class="d-block w-100" alt="Slide 6">
+    <div class="container">
+        <div class="carousel-caption text-start">
+            <img src="./assets/imgs/Untitled design/art thumbnail.png" class="d-block w-100" alt="art 6">
+            <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Get the Song</a></p>
+        </div>
+    </div>
+</div>
+
+        </div>
 
     <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -172,45 +339,68 @@
   </button>
 </div>
 </main>
+
+
+<footer class="footer text-center">
+    <p>&copy; 2023 Spec Craft Limited. All rights reserved.</p>
+</footer>
+
+
 <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-const carousel = document.querySelector('#myCarousel');
-const carouselItems = Array.from(carousel.querySelectorAll('.carousel-item'));
-const prevButton = document.querySelector('.carousel-control-prev');
-const nextButton = document.querySelector('.carousel-control-next');
+    const carousel = document.querySelector('#myCarousel');
+    const carouselItems = Array.from(carousel.querySelectorAll('.carousel-item'));
+    const prevButton = document.querySelector('.carousel-control-prev');
+    const nextButton = document.querySelector('.carousel-control-next');
 
-let currentIndex = 0;
-let intervalId = setInterval(autoScroll, 5000); // 5 seconds interval
+    let currentIndex = 0;
+    let intervalId = setInterval(autoScroll, 10000); // 10 seconds interval
 
-function autoScroll() {
-    const nextIndex = (currentIndex + 1) % carouselItems.length;
-    carouselItems[currentIndex].classList.remove('active');
-    carouselItems[nextIndex].classList.add('active');
-    currentIndex = nextIndex;
-}
+    function autoScroll() {
+        const nextIndex = (currentIndex + 1) % carouselItems.length;
 
-function stopAutoScroll() {
-    clearInterval(intervalId);
-}
+        // Remove current slide from active class and add custom transition class
+        carouselItems[currentIndex].classList.remove('active', `transition-${currentIndex}`);
+        carouselItems[nextIndex].classList.add('active', `transition-${nextIndex}`);
 
-function resumeAutoScroll() {
-    intervalId = setInterval(autoScroll, 5000);
-}
+        // Wait a short delay before applying the transition class
+        setTimeout(() => {
+            carouselItems[nextIndex].classList.add(`transition-${nextIndex}`);
+        }, 50);
 
-prevButton.addEventListener('click', () => {
-    stopAutoScroll();
-    const prevIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-    carouselItems[currentIndex].classList.remove('active');
-    carouselItems[prevIndex].classList.add('active');
-    currentIndex = prevIndex;
-    resumeAutoScroll();
-});
+        currentIndex = nextIndex;
+    }
 
-nextButton.addEventListener('click', () => {
-    stopAutoScroll();
-    autoScroll();
-    resumeAutoScroll();
-});
+    function stopAutoScroll() {
+        clearInterval(intervalId);
+    }
+
+    function resumeAutoScroll() {
+        intervalId = setInterval(autoScroll, 5000);
+    }
+
+    prevButton.addEventListener('click', () => {
+        stopAutoScroll();
+        const prevIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+
+        // Remove current slide from active class and add custom transition class
+        carouselItems[currentIndex].classList.remove('active', `transition-${currentIndex}`);
+        carouselItems[prevIndex].classList.add('active', `transition-${prevIndex}`);
+
+        // Wait a short delay before applying the transition class
+        setTimeout(() => {
+            carouselItems[prevIndex].classList.add(`transition-${prevIndex}`);
+        }, 50);
+
+        currentIndex = prevIndex;
+        resumeAutoScroll();
+    });
+
+    nextButton.addEventListener('click', () => {
+        stopAutoScroll();
+        autoScroll();
+        resumeAutoScroll();
+    });
 </script>
 
     </body>
